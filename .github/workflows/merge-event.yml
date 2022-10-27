@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait
-        if: github.event.pull_request.merged == true
+        if: ${{ github.event.pull_request.merged == true }}
         run: |
           sleep 5
       - name: Wait
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: ${{ github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true }}
         run: |
           sleep 5
       - name: Run test
