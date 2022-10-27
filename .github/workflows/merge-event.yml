@@ -7,6 +7,8 @@ on:
       - master
     types:
       - closed
+    paths:
+      - test/*.txt
 
 jobs:
   test:
